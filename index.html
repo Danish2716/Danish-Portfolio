@@ -9,7 +9,7 @@
 :root{--bg:#070d1a;--bg2:#0d1628;--cyan:#00f5d4;--gold:#ffd166;--pink:#ff6b9d;--text:#e8eaf6;--muted:#7c86a2;--card:rgba(255,255,255,0.04);--border:rgba(0,245,212,0.15);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:pointer;}
 #cursor{width:12px;height:12px;background:var(--cyan);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:screen;}
 #cursor-ring{width:36px;height:36px;border:1.5px solid rgba(0,245,212,0.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
 #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
@@ -149,11 +149,11 @@ section{position:relative;z-index:1;}
 .form-group input,.form-group textarea{width:100%;padding:12px 15px;background:var(--card);border:1px solid var(--border);border-radius:11px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;transition:border-color .2s,box-shadow .2s;outline:none;resize:none;}
 .form-group input:focus,.form-group textarea:focus{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,245,212,0.1);}
 .form-group textarea{height:115px;}
-.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--cyan),#00b4d8);color:#070d1a;font-weight:700;font-family:'Syne',sans-serif;font-size:0.92rem;border:none;border-radius:11px;cursor:none;transition:transform .2s,box-shadow .2s;}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--cyan),#00b4d8);color:#070d1a;font-weight:700;font-family:'Syne',sans-serif;font-size:0.92rem;border:none;border-radius:11px;cursor:pointer;transition:transform .2s,box-shadow .2s;}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(0,245,212,0.3);}
 footer{text-align:center;padding:34px;color:var(--muted);font-size:0.82rem;border-top:1px solid var(--border);position:relative;z-index:1;}
 footer span{color:var(--cyan);}
-#ai-btn{position:fixed;bottom:30px;right:30px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),#00b4d8);border:none;cursor:none;z-index:200;display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:0 0 40px rgba(0,245,212,0.4);animation:pulse 2.5s ease infinite;transition:transform .2s;}
+#ai-btn{position:fixed;bottom:30px;right:30px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),#00b4d8);border:none;cursor:pointer;z-index:200;display:flex;align-items:center;justify-content:center;font-size:1.25rem;box-shadow:0 0 40px rgba(0,245,212,0.4);animation:pulse 2.5s ease infinite;transition:transform .2s;}
 #ai-btn:hover{transform:scale(1.1);}
 @keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(0,245,212,0.3)}50%{box-shadow:0 0 50px rgba(0,245,212,0.7)}}
 #ai-panel{position:fixed;bottom:102px;right:30px;width:355px;max-height:530px;background:#0d1628;border:1px solid var(--border);border-radius:22px;display:none;flex-direction:column;z-index:200;box-shadow:0 30px 100px rgba(0,0,0,0.6);overflow:hidden;}
@@ -164,7 +164,7 @@ footer span{color:var(--cyan);}
 .ai-header-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;}
 .ai-header-status{font-size:0.7rem;color:var(--cyan);display:flex;align-items:center;gap:5px;}
 .ai-header-status::before{content:'●';font-size:0.38rem;animation:blink 1.5s infinite;}
-#ai-close{background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:none;margin-left:auto;}
+#ai-close{background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;margin-left:auto;}
 #ai-close:hover{color:var(--text);}
 #ai-messages{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
 .ai-msg{max-width:86%;padding:10px 14px;border-radius:18px;font-size:0.85rem;line-height:1.6;}
@@ -176,14 +176,14 @@ footer span{color:var(--cyan);}
 .typing-dots span:nth-child(3){animation-delay:.4s}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .ai-suggestions{padding:7px 13px;display:flex;flex-wrap:wrap;gap:6px;}
-.ai-suggestion{padding:5px 12px;border-radius:100px;background:rgba(0,245,212,0.06);border:1px solid rgba(0,245,212,0.2);color:var(--cyan);font-size:0.72rem;cursor:none;transition:all .2s;}
+.ai-suggestion{padding:5px 12px;border-radius:100px;background:rgba(0,245,212,0.06);border:1px solid rgba(0,245,212,0.2);color:var(--cyan);font-size:0.72rem;cursor:pointer;transition:all .2s;}
 .ai-suggestion:hover{background:rgba(0,245,212,0.15);}
 .ai-input-row{padding:9px 13px;border-top:1px solid var(--border);display:flex;gap:7px;align-items:center;}
 #ai-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:11px;color:var(--text);padding:8px 12px;font-size:0.84rem;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s;}
 #ai-input:focus{border-color:var(--cyan);}
-#ai-send{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),#00b4d8);border:none;cursor:none;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:transform .2s;flex-shrink:0;}
+#ai-send{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),#00b4d8);border:none;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;transition:transform .2s;flex-shrink:0;}
 #ai-send:hover{transform:scale(1.05);}
-#voice-btn{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border);cursor:none;font-size:0.95rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
+#voice-btn{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border);cursor:pointer;font-size:0.95rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
 #voice-btn.listening{background:rgba(255,107,157,0.2);border-color:var(--pink);animation:pulse 1s ease infinite;}
 #voice-btn:hover{border-color:var(--cyan);}
 @media(max-width:900px){nav{padding:14px 20px;}.nav-links{display:none;}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;}.section-inner{padding:68px 22px;}#home{padding:115px 22px 60px;}.hero-visual{order:-1;}.avatar-ring{width:210px;height:210px;}.avatar-inner{width:180px;height:180px;}.skills-grid,.projects-grid,.cert-grid{grid-template-columns:1fr;}#ai-panel{width:calc(100vw - 28px);right:14px;}}
@@ -434,10 +434,10 @@ footer span{color:var(--cyan);}
     <p class="section-desc reveal">Open to internships, collaborations, and exciting opportunities.</p>
     <div class="contact-grid reveal">
       <div>
-        <a href="/cdn-cgi/l/email-protection#20544154564144414e49534860474d41494c0e434f4d" class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">EMAIL</div><div class="contact-val"><span class="__cf_email__" data-cfemail="aadecbdedccbcecbc4c3d9c2eacdc7cbc3c684c9c5c7">[email&#160;protected]</span></div></div></a>
+        <a href="mailto:tatvadanish@gmail.com"#20544154564144414e49534860474d41494c0e434f4d" class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">EMAIL</div><div class="contact-val"><span class="__cf_email__" data-cfemail="aadecbdedccbcecbc4c3d9c2eacdc7cbc3c684c9c5c7">[email&#160;protected]</span></div></div></a>
         <a href="https://www.linkedin.com/in/md-danish-raza-ansari/" target="_blank" class="contact-item"><div class="contact-icon">💼</div><div><div class="contact-label">LINKEDIN</div><div class="contact-val">md-danish-raza-ansari</div></div></a>
         <a href="https://github.com/DanishAnsari3" target="_blank" class="contact-item"><div class="contact-icon">🐙</div><div><div class="contact-label">GITHUB</div><div class="contact-val">DanishAnsari3</div></div></a>
-        <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">LOCATION</div><div class="contact-val">Rajasthan, India</div></div></div>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-label">LOCATION</div><div class="contact-val">Punjab, India</div></div></div>
       </div>
       <div>
         <div class="form-group"><label>YOUR NAME</label><input type="text" placeholder="John Doe" id="cf-name"/></div>
