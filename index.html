@@ -501,7 +501,7 @@ const typedEl=document.getElementById('typed-text');
 function type(){let cur=phrases[pi];if(!deleting){typedEl.textContent=cur.slice(0,++ci);if(ci===cur.length){deleting=true;setTimeout(type,1800);return;}}else{typedEl.textContent=cur.slice(0,--ci);if(ci===0){deleting=false;pi=(pi+1)%phrases.length;}}setTimeout(type,deleting?50:100);}
 type();
 const reveals=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0});
 reveals.forEach(r=>obs.observe(r));
 const barObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.skill-fill').forEach(f=>{f.style.width=f.dataset.w+'%';});barObs.unobserve(e.target);}});},{threshold:.3});
 document.querySelectorAll('.skill-category').forEach(c=>barObs.observe(c));
