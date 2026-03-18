@@ -55,7 +55,7 @@ section{position:relative;z-index:1;}
 .section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.7rem);font-weight:800;letter-spacing:-1px;line-height:1.1;margin-bottom:14px;}
 .section-title span{color:var(--cyan);}
 .section-desc{color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:50px;}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease;}
+.reveal{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 #about{background:var(--bg2);}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
@@ -557,4 +557,4 @@ function addMsg(role,text){const d=document.createElement('div');d.className='ai
 function addTyping(){const d=document.createElement('div');d.className='ai-typing';d.innerHTML='<div class="typing-dots"><span></span><span></span><span></span></div>';aiMsgs.appendChild(d);aiMsgs.scrollTop=aiMsgs.scrollHeight;return d;}
 let recognition=null;
 if('webkitSpeechRecognition' in window||'SpeechRecognition' in window){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;recognition=new SR();recognition.lang='en-US';recognition.interimResults=false;recognition.maxAlternatives=1;recognition.onresult=e=>{const transcript=e.results[0][0].transcript;aiInput.value=transcript;document.getElementById('voice-btn').classList.remove('listening');ttsEnabled=true;sendAI();};recognition.onend=()=>document.getElementById('voice-btn').classList.remove('listening');}
-function toggleVoice(){if(!recognition){if(!aiOpen)toggleA
+function toggleVoice(){if(!recognition){if(!aiOpen)toggleA}}
